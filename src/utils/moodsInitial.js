@@ -1,0 +1,58 @@
+export const moodsInitial = [
+	{
+		location: 'dom',
+		moodType: 'green',
+		date: new Date('2024-11-01T08:00:00Z'),
+		weather: 'sun',
+		description: 'Pogodne słońce sprawiło, że czułem się pełen energii.',
+	},
+	{
+		location: 'biuro',
+		moodType: 'yellow',
+		date: new Date('2024-11-02T08:00:00Z'),
+		weather: 'cloud',
+		description: 'Chmury nie przeszkodziły w produktywnym dniu w pracy.',
+	},
+	{
+		location: 'kawiarnia',
+		moodType: 'orange',
+		date: new Date('2024-11-03T09:00:00Z'),
+		weather: 'sun',
+		description: 'Słońce w kawiarni dodało mi otuchy i relaksu.',
+	},
+	{
+		location: 'dom',
+		moodType: 'red',
+		date: new Date('2024-11-04T08:00:00Z'),
+		weather: 'cloud-rain',
+		description: 'Deszczowy dzień sprawił, że miałem kiepski humor.',
+	},
+	{
+		location: 'dom',
+		moodType: 'red',
+		date: new Date('2024-10-28T08:00:00Z'),
+		weather: 'sun',
+		description: 'Zdecydowanie poprawiło mi to humor.',
+	},
+	{
+		location: 'biuro',
+		moodType: 'orange',
+		date: new Date('2024-10-29T08:00:00Z'),
+		weather: 'cloud-lightning',
+		description: 'Miałem zły nastrój, bo pogoda nie dopisała.',
+	},
+	{
+		location: 'kawiarnia',
+		moodType: 'yellow',
+		date: new Date('2024-10-30T08:00:00Z'),
+		weather: 'cloud',
+		description: 'Chociaż pochmurno, to kawa mnie rozbudziła.',
+	},
+	{
+		location: 'dom',
+		moodType: 'green',
+		date: new Date('2024-10-31T08:00:00Z'),
+		weather: 'cloud-drizzle',
+		description: 'Drobny deszczyk dodał nostalgii.',
+	},
+];

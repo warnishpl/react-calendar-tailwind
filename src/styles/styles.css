@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body,
+html {
+	overflow-x: hidden;
+}
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: #e0f7fa;
+    min-height: 100vh;
+}
+.CalendarWrapper {
+    margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 20px;
+	@apply shadow-md;
+}
+.ChartsWrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 320px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: #fff;
+	border-radius: 20px;
+	@apply shadow-md;
+}

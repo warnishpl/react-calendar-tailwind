@@ -1,0 +1,74 @@
+[
+	{
+		"location": "dom",
+		"moodType": "green",
+		"date": "2024-11-01T08:00:00.000Z",
+		"weather": "sun",
+		"description": "Pogodne słońce sprawiło, że czułem się pełen energii."
+	},
+	{
+		"location": "biuro",
+		"moodType": "yellow",
+		"date": "2024-11-02T08:00:00.000Z",
+		"weather": "cloud",
+		"description": "Chmury nie przeszkodziły w produktywnym dniu w pracy."
+	}
+]
+
+
+
+
+[
+	{
+		"date": {
+			"year": "2024",
+			"month": "11",
+			"day": "6",
+			"hour": "14",
+			"minute": "33",
+			"second": "35",
+			"actualDate": "2024-11-09T13:33:35.207Z"
+		},
+		"mood": "yellow",
+		"note": ""
+	},
+	{
+		"date": {
+			"year": "2024",
+			"month": "11",
+			"day": "5",
+			"hour": "14",
+			"minute": "39",
+			"second": "0",
+			"actualDate": "2024-11-08T13:39:00.297Z"
+		},
+		"mood": "orange",
+		"note": ""
+	},
+	{
+		"date": {
+			"year": "2024",
+			"month": "11",
+			"day": "4",
+			"hour": "14",
+			"minute": "39",
+			"second": "1",
+			"actualDate": "2024-11-07T13:39:01.902Z"
+		},
+		"mood": "red",
+		"note": ""
+	},
+	{
+		"date": {
+			"year": "2024",
+			"month": "11",
+			"day": "3",
+			"hour": "14",
+			"minute": "39",
+			"second": "3",
+			"actualDate": "2024-11-06T13:39:03.155Z"
+		},
+		"mood": "green",
+		"note": ""
+	}
+]
