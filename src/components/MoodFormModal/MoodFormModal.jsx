@@ -106,21 +106,21 @@ export function MoodFormModal({ setIsFormShown, onClose }) {
 	);
 
 	return (
-		<div className='fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-20'>
-			<div className='bg-white p-6 rounded-lg shadow-lg max-w-sm w-full'>
+		<div className='fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-20 '>
+			<div className='bg-white p-6 rounded-lg shadow-lg max-w-sm w-custom'>
 				<h3 className='text-lg font-semibold mb-4'>
 					{isEditing ? 'Edytuj nastrój' : 'Dodaj nowy nastrój'}
 				</h3>
 				<form onSubmit={handleSubmit}>
 					<div className='mb-2'>
-						<p className='mb-1 font-semibold'>Miejsce dodania:</p>
+						<p className='mb-1 font-semibold '>Miejsce dodania:</p>
 						<input
 							type='text'
 							name='location'
 							value={newMood.location}
 							onChange={handleChange}
 							placeholder='np. Kawiarnia'
-							className='w-full mb-2 p-2 border border-gray-300 rounded'
+							className='text-sm w-full mb-2 p-2 border border-gray-300 rounded'
 						/>
 						{errors.location && (
 							<p className='text-red-500 text-sm'>{errors.location}</p>
@@ -183,7 +183,7 @@ export function MoodFormModal({ setIsFormShown, onClose }) {
 						value={newMood.description}
 						onChange={handleChange}
 						placeholder='np. Słońce w kawiarni dodało mi otuchy i relaksu.'
-						className='w-full mb-2 p-2 border border-gray-300 rounded'
+						className='text-sm w-full mb-2 p-2 border border-gray-300 rounded'
 					></textarea>
 					{errors.description && (
 						<p className='text-red-500 text-sm'>{errors.description}</p>
@@ -193,7 +193,7 @@ export function MoodFormModal({ setIsFormShown, onClose }) {
 						{isEditing && (
 							<button
 								type='button'
-								className='bg-red-500 text-white p-2 rounded'
+								className='text-sm bg-red-500 text-white p-2 rounded'
 								onClick={handleDelete}
 							>
 								Usuń wpis
@@ -202,13 +202,13 @@ export function MoodFormModal({ setIsFormShown, onClose }) {
 						<button
 							type='button'
 							onClick={onClose}
-							className='bg-gray-400 text-white p-2 rounded'
+							className='text-sm bg-gray-400 text-white p-2 rounded'
 						>
 							Anuluj
 						</button>
 						<button
 							type='submit'
-							className='bg-blue-500 text-white p-2 rounded'
+							className='text-sm bg-blue-500 text-white p-2 rounded'
 						>
 							{isEditing ? 'Zapisz zmiany' : 'Dodaj nastrój'}
 						</button>

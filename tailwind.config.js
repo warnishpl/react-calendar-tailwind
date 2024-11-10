@@ -5,10 +5,13 @@ export default {
 		extend: {
 			colors: {},
 			maxWidth: {
-				'150': '150px', // Dodaje klasę max-w-175px
+				150: '150px',
 			},
 			scale: {
-				'custom': '0.9', // Dodaje klasę max-w-175px
+				custom: '0.9', 
+			},
+			width: {
+				custom: '85%',
 			},
 		},
 	},
