@@ -10,14 +10,16 @@ export function MoodPieChart({ minDate, maxDate, annualView }) {
 	const start = startOfMonth(minDate);
 	const end = endOfMonth(maxDate);
 
-	useEffect(() => {}, [moods]);
+	useEffect(() => {
+	}, [moods]);
 
+	// Zlicz ile wystąpien poszczegolnych nastrojów
 	const moodCounts = useMemo(() => {
-		const localStart = startOfDay(start);
-		const localEnd = endOfDay(end);
+		const localStart = startOfDay(start); 
+		const localEnd = endOfDay(end); 
 
 		const counts = moods.reduce((acc, mood) => {
-			const moodDate = new Date(mood.date);
+			const moodDate = new Date(mood.date); 
 			// Porownanie z datami w tej samej strefie czasowej
 			if (moodDate >= localStart && moodDate <= localEnd) {
 				acc[mood.moodType] = (acc[mood.moodType] || 0) + 1;
@@ -30,6 +32,7 @@ export function MoodPieChart({ minDate, maxDate, annualView }) {
 
 	const moodTypes = ['green', 'yellow', 'orange', 'red'];
 
+	// odpowiedniki kolorow Tailwind
 	const getMoodColor = useCallback((moodType) => {
 		const moodColors = {
 			green: '#22c55e',
@@ -50,28 +53,29 @@ export function MoodPieChart({ minDate, maxDate, annualView }) {
 		return moodLabels[moodType] || 'Nieznany';
 	}, []);
 
-	const totalMoodsCount = Object.values(moodCounts).reduce(
-		(sum, count) => sum + count,
-		0
-	);
+	// Obliczamy sumę wszystkich wystąpień nastrojów
+	const totalMoodsCount = Object.values(moodCounts).reduce((sum, count) => sum + count, 0);
 
+	// Obliczamy dane z procentami
 	const data = useMemo(() => {
 		return moodTypes.map((moodType) => {
 			const count = moodCounts[moodType] || 0;
-			const percentage =
-				totalMoodsCount > 0 ? ((count / totalMoodsCount) * 100).toFixed(2) : 0;
+			const percentage = totalMoodsCount > 0 ? Math.round((count / totalMoodsCount) * 100) : 0;
 
 			return {
 				id: moodType,
 				value: count,
-				label: `${getMoodLabel(moodType)}`,
+				label: `${getMoodLabel(moodType)}: ${percentage}%`,
 				color: getMoodColor(moodType),
 				percentage: percentage,
 			};
 		});
 	}, [moodCounts, moodTypes, getMoodColor, getMoodLabel, totalMoodsCount]);
 
-	const hasData = useMemo(() => data.some((item) => item.value > 0), [data]);
+	// Filtrujemy dane, aby pominąć te z 0%
+	const filteredData = data.filter(item => item.percentage > 0);
+
+	const hasData = useMemo(() => filteredData.length > 0, [filteredData]);
 
 	const mostFrequentMood = useMemo(() => {
 		return Object.keys(moodCounts).reduce(
@@ -107,7 +111,7 @@ export function MoodPieChart({ minDate, maxDate, annualView }) {
 			<div className='relative scale-75'>
 				{hasData ? (
 					<>
-						<PieChart
+						<PieChart 
 							series={[
 								{
 									data: innerData,
@@ -131,8 +135,8 @@ export function MoodPieChart({ minDate, maxDate, annualView }) {
 						<PieChart
 							series={[
 								{
-									data: data,
-									backgroundColor: data.map((item) => item.color),
+									data: filteredData, // Używamy tylko danych z procentem > 0
+									backgroundColor: filteredData.map((item) => item.color),
 									cx: 70,
 									innerRadius: 32,
 									startAngle: -90,
@@ -140,7 +144,7 @@ export function MoodPieChart({ minDate, maxDate, annualView }) {
 									outerRadius: 75,
 									paddingAngle: 2,
 									cornerRadius: 5,
-									arcLabel: (item) => `${item.percentage}%`,
+									arcLabel: (item) => `${item.percentage}%`,  // Wyświetlanie zaokrąglonego procentu
 								},
 							]}
 							width={150}
