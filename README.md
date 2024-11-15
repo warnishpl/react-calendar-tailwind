@@ -1,15 +1,8 @@
 # React Mood Tracker App
 
-In progress...
+Simple mood tracker with graph saving data in localstorage.
 
-## Jak zacząć
+### Demo
 
-1. Sklonuj to repozytorium:
-   ```bash
-   git clone https://github.com/warnishpl/react-calendar-tailwind
-   ```
-2. Wywołaj:
-   ```bash
-   cd .\react-calendar-tailwind\
-   npm install
-   ```
+https://react-calendar-tailwind-two.vercel.app/
+
